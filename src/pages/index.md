@@ -67,6 +67,12 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+slideshow:
+  images:
+    - image: /img/flavor_wheel.jpg
+    - image: /img/chemex.jpg
+    - image: /img/blog-index.jpg
+    - image: /img/jumbotron.jpg
 gallery:
   images:
     - model: Model Name

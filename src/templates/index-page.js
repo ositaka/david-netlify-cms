@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
+import SlideShow from '../components/SlideShow'
 import Gallery from '../components/Gallery'
 
 export const IndexPageTemplate = ({
@@ -14,6 +15,7 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
+  slideshow,
   gallery,
   biography,
 }) => (
@@ -102,6 +104,10 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
+    <section id="home" className="section">
+      <h1>David Alioth</h1>
+      <SlideShow gridItems={slideshow.images} />
+    </section>
     <section id="stories" className="section">
       <h1>Stories</h1>
       <Gallery gridItems={gallery.images} />
@@ -126,6 +132,9 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  slideshow: PropTypes.shape({
+    images: PropTypes.array,
+  }),
   gallery: PropTypes.shape({
     images: PropTypes.array,
   }),
@@ -145,6 +154,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        slideshow={frontmatter.slideshow}
         gallery={frontmatter.gallery}
         biography={frontmatter.biography}
       />
@@ -194,6 +204,17 @@ export const pageQuery = graphql`
           }
           heading
           description
+        }
+        slideshow {
+          images {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 360, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
         }
         gallery {
           images {

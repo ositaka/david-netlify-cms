@@ -4,6 +4,7 @@ import { Link, graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import Features from '../components/Features'
+import Gallery from '../components/Gallery'
 
 export const IndexPageTemplate = ({
   image,
@@ -13,6 +14,8 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
+  gallery,
+  biography,
 }) => (
   <div>
     <div
@@ -99,6 +102,17 @@ export const IndexPageTemplate = ({
         </div>
       </div>
     </section>
+    <section id="stories" className="section">
+      <h1>Stories</h1>
+      <Gallery gridItems={gallery.images} />
+    </section>
+    <section id="biography" className="section">
+      <h1>Biography</h1>
+      <p>{biography}</p>
+    </section>
+    <section id="inquiries" className="section">
+      <h1>Inquiries</h1>
+    </section>
   </div>
 )
 
@@ -112,6 +126,10 @@ IndexPageTemplate.propTypes = {
   intro: PropTypes.shape({
     blurbs: PropTypes.array,
   }),
+  gallery: PropTypes.shape({
+    images: PropTypes.array,
+  }),
+  biography: PropTypes.string,
 }
 
 const IndexPage = ({ data }) => {
@@ -127,6 +145,8 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        gallery={frontmatter.gallery}
+        biography={frontmatter.biography}
       />
     </Layout>
   )
@@ -175,6 +195,20 @@ export const pageQuery = graphql`
           heading
           description
         }
+        gallery {
+          images {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 360, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            title
+            model
+          }
+        }
+        biography
       }
     }
   }

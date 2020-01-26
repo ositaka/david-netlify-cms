@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: This is the website for david!
+title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
 subheading: Support sustainable farming while enjoying a cup
@@ -67,5 +67,17 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+gallery:
+  images:
+    - image: /img/coffee.png
+      title: The Portrair of Nuno 
+      model: Nuno Marques, Lisbon, 2020
+    - image: /img/coffee.png
+      title: Birgit at Sunset 
+      model: Birgit Verbeke, Kortrijk, 2020
+    - image: /img/coffee.png
+      title: Another Title 
+      model: Nuno Marques, Lisbon, 2020
+biography: >-
+  The biography of david, once he writes it it!
 ---
-

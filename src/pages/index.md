@@ -67,5 +67,6 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+biography: And... Where is the biography?
 ---
 

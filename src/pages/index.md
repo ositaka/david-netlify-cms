@@ -67,6 +67,14 @@ main:
   image3:
     alt: Coffee beans
     image: /img/products-grid1.jpg
+gallery:
+  images:
+    - model: Nuno Marques
+      title: First image on CMS
+      image: /img/chemex.jpg
+    - model: Another Model
+      title: Another Photo
+      image: /img/blog-index.jpg
 biography: And... Where is the biography?
 ---
 

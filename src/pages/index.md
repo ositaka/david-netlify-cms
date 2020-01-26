@@ -75,6 +75,9 @@ gallery:
     - model: Another Model
       title: Another Photo
       image: /img/blog-index.jpg
+    - model: Model Name
+      title: Third photo
+      image: /img/flavor_wheel.jpg
 biography: And... Where is the biography?
 ---
 

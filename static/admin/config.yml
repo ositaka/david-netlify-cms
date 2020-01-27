@@ -20,6 +20,5 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: SlideShow, name: slideshow, widget: object, fields: [{label: Images, name: images, widget: list, fields: [{label: Image, name: image, widget: image}]}]}
           - {label: Gallery, name: gallery, widget: object, fields: [{label: Images, name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Title, name: title, widget: string}, {label: Model, name: model, widget: string}]}]}
           - {label: Biography, name: biography, widget: string}

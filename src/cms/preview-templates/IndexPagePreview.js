@@ -8,7 +8,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
   if (data) {
     return (
       <IndexPageTemplate
-        slideshow={data.slideshow || { images: [] }}
         gallery={data.gallery || { images: [] }}
         biography={data.biography}
       />

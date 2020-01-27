@@ -1,11 +1,11 @@
 ---
 templateKey: index-page
 slideshow:
-  images:
-    - image: /img/flavor_wheel.jpg
-    - image: /img/chemex.jpg
-    - image: /img/blog-index.jpg
-    - image: /img/jumbotron.jpg
+  slides:
+    - slideimage: /img/flavor_wheel.jpg
+    - slideimage: /img/chemex.jpg
+    - slideimage: /img/blog-index.jpg
+    - slideimage: /img/jumbotron.jpg
 gallery:
   images:
     - model: Model Name

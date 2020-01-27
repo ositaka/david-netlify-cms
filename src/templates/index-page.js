@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
-import SlideShow from '../components/SlideShow'
 import Gallery from '../components/Gallery'
 import ContactForm from '../components/ContactForm'
 
@@ -14,7 +13,6 @@ export const IndexPageTemplate = ({
   <div>
     <section id="home" className="section">
       <h1>David Alioth</h1>
-      <SlideShow gridItems={slideshow.images} />
     </section>
     <section id="stories" className="section">
       <h1>Stories</h1>
@@ -33,7 +31,7 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   slideshow: PropTypes.shape({
-    images: PropTypes.array,
+    slides: PropTypes.array,
   }),
   gallery: PropTypes.shape({
     images: PropTypes.array,
@@ -69,17 +67,6 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        slideshow {
-          images {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 360, quality: 64) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
-        }
         gallery {
           images {
             image {

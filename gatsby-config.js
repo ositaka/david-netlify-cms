@@ -56,6 +56,9 @@ module.exports = {
               destinationDir: 'static',
             },
           },
+          {
+            resolve: 'gatsby-plugin-smoothscroll',
+          },
         ],
       },
     },

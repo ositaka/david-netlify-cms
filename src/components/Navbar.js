@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import scrollTo from 'gatsby-plugin-smoothscroll'
 import logo from '../img/logo.svg'
 
 const Navbar = class extends React.Component {
@@ -67,12 +68,12 @@ const Navbar = class extends React.Component {
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
-              <a className="navbar-item" href="#stories">
+              <button className="navbar-item" onClick={() => scrollTo('#stories')}>
                 Stories
-              </a>
-              <a className="navbar-item" href="#inquiries">
+              </button>
+              <button className="navbar-item" onClick={() => scrollTo('#inquiries')}>
                 Inquiries
-              </a>
+              </button>
             </div>
           </div>
         </div>

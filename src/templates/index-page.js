@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
+import HeroSlider from '../components/HeroSlider'
 import Gallery from '../components/Gallery'
 import ContactForm from '../components/ContactForm'
 
@@ -13,6 +14,7 @@ export const IndexPageTemplate = ({
   <div>
     <section id="home" className="section">
       <h1>David Alioth</h1>
+      <HeroSlider />
     </section>
     <section id="stories" className="section">
       <h1>Stories</h1>

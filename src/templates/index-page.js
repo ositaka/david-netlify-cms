@@ -1,13 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
 import HeroSlider from '../components/HeroSlider'
 import Gallery from '../components/Gallery'
+import GallerySwiper from '../components/GallerySwiper'
 import ContactForm from '../components/ContactForm'
 
 export const IndexPageTemplate = ({
   slideshow,
+  gallerySwiper,
   gallery,
   biography,
 }) => (
@@ -15,6 +18,10 @@ export const IndexPageTemplate = ({
     <section id="home" className="section">
       <h1>David Alioth</h1>
       <HeroSlider />
+    </section>
+    <section id="dsjdshkdsjahdsalkjdasldsadsajlkdsajsadldasj" className="section">
+      <h1>Stories</h1>
+      <GallerySwiper gridItems={gallerySwiper.images} />
     </section>
     <section id="stories" className="section">
       <h1>Stories</h1>
@@ -35,6 +42,9 @@ IndexPageTemplate.propTypes = {
   slideshow: PropTypes.shape({
     slides: PropTypes.array,
   }),
+  gallerySwiper: PropTypes.shape({
+    images: PropTypes.array,
+  }),
   gallery: PropTypes.shape({
     images: PropTypes.array,
   }),
@@ -48,6 +58,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <IndexPageTemplate
         slideshow={frontmatter.slideshow}
+        gallerySwiper={frontmatter.gallerySwiper}
         gallery={frontmatter.gallery}
         biography={frontmatter.biography}
       />
@@ -69,6 +80,19 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
+        gallerySwiper {
+          images {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 360, quality: 64) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            title
+            model
+          }
+        }
         gallery {
           images {
             image {

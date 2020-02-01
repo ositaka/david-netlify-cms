@@ -1,0 +1,13 @@
+.swiper-slide .gatsby-image-wrapper {
+  transition: all 600ms ease;
+}
+
+.swiper-slide .gatsby-image-wrapper {
+  width: 50%;
+  margin: 12.5% 25%;
+}
+
+.swiper-slide-active .gatsby-image-wrapper {
+  width: 100%;
+  margin: 0;
+}

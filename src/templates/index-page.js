@@ -6,27 +6,28 @@ import Layout from '../components/Layout'
 import HeroSlider from '../components/HeroSlider'
 import Gallery from '../components/Gallery'
 import GallerySwiper from '../components/GallerySwiper'
+import '../components/GallerySwiper.css'
 import ContactForm from '../components/ContactForm'
 
 export const IndexPageTemplate = ({
   slideshow,
   gallerySwiper,
   gallery,
-  biography,
+  biography
 }) => (
   <div>
     <section id="home" className="section">
       <h1>David Alioth</h1>
       <HeroSlider />
     </section>
-    <section id="dsjdshkdsjahdsalkjdasldsadsajlkdsajsadldasj" className="section">
-      <h1>Stories</h1>
-      <GallerySwiper gridItems={gallerySwiper.images} />
-    </section>
     <section id="stories" className="section">
       <h1>Stories</h1>
-      <Gallery gridItems={gallery.images} />
+      <GallerySwiper slides={gallerySwiper.images} />
     </section>
+    {/* <section id="stories" className="section">
+      <h1>Stories</h1>
+      <Gallery gridItems={gallery.images} />
+    </section> */}
     <section id="biography" className="section">
       <h1>Biography</h1>
       <p>{biography}</p>
@@ -40,15 +41,15 @@ export const IndexPageTemplate = ({
 
 IndexPageTemplate.propTypes = {
   slideshow: PropTypes.shape({
-    slides: PropTypes.array,
+    slides: PropTypes.array
   }),
   gallerySwiper: PropTypes.shape({
-    images: PropTypes.array,
+    images: PropTypes.array
   }),
   gallery: PropTypes.shape({
-    images: PropTypes.array,
+    images: PropTypes.array
   }),
-  biography: PropTypes.string,
+  biography: PropTypes.string
 }
 
 const IndexPage = ({ data }) => {
@@ -69,9 +70,9 @@ const IndexPage = ({ data }) => {
 IndexPage.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
-      frontmatter: PropTypes.object,
-    }),
-  }),
+      frontmatter: PropTypes.object
+    })
+  })
 }
 
 export default IndexPage

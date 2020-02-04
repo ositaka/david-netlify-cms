@@ -1,8 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { IndexPageTemplate } from '../../templates/index-page'
-import { HeroSwiper } from '../../components/HeroSwiper'
-import { GallerySwiper } from '../../components/GallerySwiper'
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(['data']).toJS()
@@ -15,8 +13,6 @@ const IndexPagePreview = ({ entry, getAsset }) => {
           gallerySwiper={data.gallerySwiper || { images: [] }}
           biography={data.biography}
         />
-        <HeroSwiper heroSwiper={data.heroSwiper || { images: [] }} />
-        <GallerySwiper heroSwiper={data.gallerySwiper || { images: [] }} />
       </>
     )
   } else {

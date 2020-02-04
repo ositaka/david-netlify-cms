@@ -8,7 +8,7 @@ const Navbar = class extends React.Component {
     super(props)
     this.state = {
       active: false,
-      navBarActiveClass: '',
+      navBarActiveClass: ''
     }
   }
 
@@ -16,17 +16,17 @@ const Navbar = class extends React.Component {
     // toggle the active boolean in the state
     this.setState(
       {
-        active: !this.state.active,
+        active: !this.state.active
       },
       // after state has been updated,
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
+              navBarActiveClass: 'is-active'
             })
           : this.setState({
-              navBarActiveClass: '',
+              navBarActiveClass: ''
             })
       }
     )
@@ -41,7 +41,7 @@ const Navbar = class extends React.Component {
       >
         <div className="container">
           <div className="navbar-brand">
-            <Link to="/" className="navbar-item" title="Logo">
+            <Link to="/" className="navbar-item" title="David Alioth">
               <img src={logo} alt="David Alioth" style={{ width: '88px' }} />
             </Link>
             {/* Hamburger menu */}
@@ -68,10 +68,16 @@ const Navbar = class extends React.Component {
               </Link>
             </div>
             <div className="navbar-end has-text-centered">
-              <button className="navbar-item" onClick={() => scrollTo('#stories')}>
+              <button
+                className="navbar-item"
+                onClick={() => scrollTo('#stories')}
+              >
                 Stories
               </button>
-              <button className="navbar-item" onClick={() => scrollTo('#inquiries')}>
+              <button
+                className="navbar-item"
+                onClick={() => scrollTo('#inquiries')}
+              >
                 Inquiries
               </button>
             </div>

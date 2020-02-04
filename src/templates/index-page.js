@@ -3,31 +3,21 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import HeroSlider from '../components/HeroSlider'
-import Gallery from '../components/Gallery'
+import HeroSwiper from '../components/HeroSwiper'
 import GallerySwiper from '../components/GallerySwiper'
 import '../components/GallerySwiper.css'
 import ContactForm from '../components/ContactForm'
 
-export const IndexPageTemplate = ({
-  slideshow,
-  gallerySwiper,
-  gallery,
-  biography
-}) => (
+export const IndexPageTemplate = ({ heroSwiper, gallerySwiper, biography }) => (
   <div>
     <section id="home" className="section">
       <h1>David Alioth</h1>
-      <HeroSlider />
+      <HeroSwiper slides={heroSwiper.images} />
     </section>
     <section id="stories" className="section">
       <h1>Stories</h1>
       <GallerySwiper slides={gallerySwiper.images} />
     </section>
-    {/* <section id="stories" className="section">
-      <h1>Stories</h1>
-      <Gallery gridItems={gallery.images} />
-    </section> */}
     <section id="biography" className="section">
       <h1>Biography</h1>
       <p>{biography}</p>
@@ -40,13 +30,10 @@ export const IndexPageTemplate = ({
 )
 
 IndexPageTemplate.propTypes = {
-  slideshow: PropTypes.shape({
-    slides: PropTypes.array
-  }),
-  gallerySwiper: PropTypes.shape({
+  heroSwiper: PropTypes.shape({
     images: PropTypes.array
   }),
-  gallery: PropTypes.shape({
+  gallerySwiper: PropTypes.shape({
     images: PropTypes.array
   }),
   biography: PropTypes.string
@@ -58,9 +45,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <IndexPageTemplate
-        slideshow={frontmatter.slideshow}
+        heroSwiper={frontmatter.heroSwiper}
         gallerySwiper={frontmatter.gallerySwiper}
-        gallery={frontmatter.gallery}
         biography={frontmatter.biography}
       />
     </Layout>
@@ -81,12 +67,12 @@ export const pageQuery = graphql`
   query IndexPageTemplate {
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
-        gallerySwiper {
+        heroSwiper {
           images {
             image {
               childImageSharp {
-                fluid(maxWidth: 360, quality: 64) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 2048, quality: 64) {
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }
@@ -94,12 +80,12 @@ export const pageQuery = graphql`
             model
           }
         }
-        gallery {
+        gallerySwiper {
           images {
             image {
               childImageSharp {
-                fluid(maxWidth: 360, quality: 64) {
-                  ...GatsbyImageSharpFluid
+                fluid(maxWidth: 2048, quality: 64) {
+                  ...GatsbyImageSharpFluid_tracedSVG
                 }
               }
             }

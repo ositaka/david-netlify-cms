@@ -1,13 +1,21 @@
 .swiper-slide .gatsby-image-wrapper {
-  transition: all 600ms ease;
-}
-
-.swiper-slide .gatsby-image-wrapper {
-  width: 50%;
-  margin: 12.5% 25%;
+  transition: all 800ms ease;
+  padding-top: 15%;
+  opacity: 0.35;
 }
 
 .swiper-slide-active .gatsby-image-wrapper {
-  width: 100%;
-  margin: 0;
+  transition: all 1200ms ease;
+  padding: 0;
+  opacity: 1;
+}
+
+.swiper-slide-prev .gatsby-image-wrapper {
+  transform: translateX(-60%);
+  margin-right: 30%;
+}
+
+.swiper-slide-next .gatsby-image-wrapper {
+  transform: translateX(30%);
+  margin-left: 30%;
 }

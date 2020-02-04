@@ -20,6 +20,17 @@ collections:
         name: "index"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
-          - {label: Gallery Swiper, name: gallerySwiper, widget: object, fields: [{label: Images, name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Title, name: title, widget: string}, {label: Model, name: model, widget: string}]}]}
-          - {label: Gallery, name: gallery, widget: object, fields: [{label: Images, name: images, widget: list, fields: [{label: Image, name: image, widget: image}, {label: Title, name: title, widget: string}, {label: Model, name: model, widget: string}]}]}
+          - {label: Hero Swiper, name: heroSwiper, widget: object, fields: [
+              {label: Images, name: images, widget: list, fields: [
+                {label: Image, name: image, widget: image}, 
+                {label: Title, name: title, widget: string}, 
+            ]}
+          ]}
+          - {label: Gallery Swiper, name: gallerySwiper, widget: object, fields: [
+              {label: Images, name: images, widget: list, fields: [
+                {label: Image, name: image, widget: image}, 
+                {label: Title, name: title, widget: string}, 
+                {label: Model, name: model, widget: string}
+            ]}
+          ]}
           - {label: Biography, name: biography, widget: string}

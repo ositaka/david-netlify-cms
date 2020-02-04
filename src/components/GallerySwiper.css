@@ -1,21 +1,21 @@
-.swiper-slide .gatsby-image-wrapper {
+#stories .swiper-slide .gatsby-image-wrapper {
   transition: all 800ms ease;
   padding-top: 15%;
   opacity: 0.35;
 }
 
-.swiper-slide-active .gatsby-image-wrapper {
+#stories .swiper-slide-active .gatsby-image-wrapper {
   transition: all 1200ms ease;
   padding: 0;
   opacity: 1;
 }
 
-.swiper-slide-prev .gatsby-image-wrapper {
+#stories .swiper-slide-prev .gatsby-image-wrapper {
   transform: translateX(-60%);
   margin-right: 30%;
 }
 
-.swiper-slide-next .gatsby-image-wrapper {
+#stories .swiper-slide-next .gatsby-image-wrapper {
   transform: translateX(30%);
   margin-left: 30%;
 }

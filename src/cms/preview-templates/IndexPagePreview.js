@@ -24,7 +24,15 @@ IndexPagePreview.propTypes = {
   entry: PropTypes.shape({
     getIn: PropTypes.func
   }),
-  getAsset: PropTypes.func
+  getAsset: PropTypes.func,
+
+  heroSwiper: PropTypes.shape({
+    images: PropTypes.array
+  }),
+  gallerySwiper: PropTypes.shape({
+    images: PropTypes.array
+  }),
+  biography: PropTypes.string
 }
 
 export default IndexPagePreview

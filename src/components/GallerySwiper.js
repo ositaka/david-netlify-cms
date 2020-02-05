@@ -9,7 +9,12 @@ const GallerySwiper = ({ slides }) => {
   const params = {
     slidesPerView: 1.8,
     loop: true,
-    speed: 900
+    speed: 900,
+
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
   }
 
   return (

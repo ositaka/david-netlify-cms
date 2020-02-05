@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { IndexPageTemplate } from '../../templates/index-page'
 
-import '../../components/GallerySwiper.css'
+import '/src/components/GallerySwiper.css'
 
 const IndexPagePreview = ({ entry /*, getAsset */ }) => {
   const data = entry.getIn(['data']).toJS()
@@ -33,10 +33,10 @@ IndexPagePreview.propTypes = {
   gallerySwiper: PropTypes.shape({
     images: PropTypes.array
   }),
-  biography: PropTypes.string
+  biography: PropTypes.string,
 
   // test
-  // getAsset: PropTypes.func
+  getAsset: PropTypes.func
 }
 
 export default IndexPagePreview

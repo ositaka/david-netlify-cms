@@ -11,7 +11,7 @@ const IndexPagePreview = ({ entry /*, getAsset */ }) => {
     return (
       <>
         <IndexPageTemplate
-          heroSwiper={data.heroSwiper || { images: [] }}
+          // heroSwiper={data.heroSwiper || { images: [] }}
           gallerySwiper={data.gallerySwiper || { images: [] }}
           biography={data.biography}
         />
@@ -27,9 +27,9 @@ IndexPagePreview.propTypes = {
     getIn: PropTypes.func
   }),
 
-  heroSwiper: PropTypes.shape({
-    images: PropTypes.array
-  }),
+  // heroSwiper: PropTypes.shape({
+  //   images: PropTypes.array
+  // }),
   gallerySwiper: PropTypes.shape({
     images: PropTypes.array
   }),

@@ -3,10 +3,8 @@ templateKey: index-page
 heroSwiper:
   images:
     - image: /img/chemex.jpg
-      model: Nuno Marques
       title: First image on CMS
     - image: /img/blog-index.jpg
-      model: Another Model
       title: Another Photo
 gallerySwiper:
   images:
@@ -34,5 +32,9 @@ gallerySwiper:
     - image: /img/products-grid1.jpg
       model: and the model
       title: The title Yes
+    - image: /img/IMG_20190928_153147.jpg
+      model: My model
+      title: My new image
 biography: And... Where is the biography?
 ---
+

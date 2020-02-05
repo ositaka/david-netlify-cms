@@ -6,8 +6,13 @@ heroSwiper:
       title: First image on CMS
     - image: /img/blog-index.jpg
       title: Another Photo
+    - image: /img/IMG_20190928_153147.jpg
+      title: Image added CMS
 gallerySwiper:
   images:
+    - image: /img/IMG_20200129_131057.jpg
+      model: Bikes
+      title: Another photo
     - image: /img/chemex.jpg
       model: Nuno Marques
       title: First image on CMS

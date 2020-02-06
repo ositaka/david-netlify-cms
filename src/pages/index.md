@@ -3,10 +3,8 @@ templateKey: index-page
 heroSwiper:
   images:
     - image: /img/chemex.jpg
-      model: Nuno Marques
       title: First image on CMS
     - image: /img/blog-index.jpg
-      model: Another Model
       title: Another Photo
 gallerySwiper:
   images:

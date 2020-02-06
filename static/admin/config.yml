@@ -12,6 +12,22 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "stories"
+    label: "Stories"
+    folder: "src/pages/stories"
+    create: true
+    slug: "{{year}}-{{slug}}"
+    fields:
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "story-gallery"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: Images, name: images, widget: list, fields: [
+          {label: Image, name: image, widget: image}, 
+          {label: Title, name: title, widget: string}, 
+          {label: Model, name: model, widget: string}, 
+      ]}
+
   - name: "pages"
     label: "Pages"
     files:

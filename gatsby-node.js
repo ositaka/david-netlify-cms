@@ -62,7 +62,7 @@ exports.createPages = ({ actions, graphql }) => {
 
       createPage({
         path: storyPath,
-        component: path.resolve(`src/templates/stories.js`),
+        component: path.resolve(`src/templates/storiy-gallery.js`),
         context: {
           story
         }

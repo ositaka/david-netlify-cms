@@ -34,12 +34,37 @@ exports.createPages = ({ actions, graphql }) => {
       const id = edge.node.id
       createPage({
         path: edge.node.fields.slug,
+        stories: edge.node.fields.stories,
         component: path.resolve(
           `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
         ),
         // additional data can be passed via context
         context: {
           id
+        }
+      })
+    })
+
+    // story pages:
+    let stories = []
+    // Iterate through each post, putting all found stories into `stories`
+    posts.forEach(edge => {
+      if (_.get(edge, `node.frontmatter.stories`)) {
+        stories = stories.concat(edge.node.frontmatter.stories)
+      }
+    })
+    // Eliminate duplicate stories
+    stories = _.uniq(stories)
+
+    // Make story pages
+    stories.forEach(story => {
+      const storyPath = `/stories/${_.kebabCase(story)}/`
+
+      createPage({
+        path: storyPath,
+        component: path.resolve(`src/templates/stories.js`),
+        context: {
+          story
         }
       })
     })
